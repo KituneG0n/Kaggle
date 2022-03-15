@@ -4,8 +4,8 @@ import numpy as np
 from sklearn.base import TransformerMixin
 
 #Loading the traing,test data
-train = pd.read_csv("/home/g0n/Documents/Programing_git/Py/kaggle/titanic_kaggls/train.csv")
-test = pd.read_csv("/home/g0n/Documents/Programing_git/Py/kaggle/titanic_kaggls/test.csv")
+train = pd.read_csv('/root/Kaggle/titanic_kaggls/train.csv')
+test = pd.read_csv('/root/Kaggle/titanic_kaggls/test.csv')
 
 
 
