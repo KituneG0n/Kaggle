@@ -4,9 +4,9 @@ import numpy as np
 from sklearn.base import TransformerMixin
 
 #Loading the traing,test data
-train = pd.read_csv('/root/Kaggle/titanic_kaggls/train.csv')
-test = pd.read_csv('/root/Kaggle/titanic_kaggls/test.csv')
-
+train = pd.read_csv('../input/titanic/train.csv')
+test = pd.read_csv('../input/titanic/test.csv')
+data_gender_submission = pd.read_csv('../input/titanic/gender_submission.csv')
 
 
 #Befor Checking for missing data
@@ -61,4 +61,9 @@ xtest = pd.DataFrame({'Pclass':test['Pclass'], 'Sex':test['Sex'], 'Age':test['Ag
 
 print(model.predict(xtest))
 
-#これ将来的にどうする?
+submitPre = pd.DataFrame({
+                        'PassengerId':test['PassengerId'],
+                        'Survived':model.predict(xtest)
+                        })
+# CSV出力
+submitPre.to_csv("gender_submission.csv",index=False)
